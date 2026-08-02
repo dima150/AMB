@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AMB — студия шаффла в Иркутске</title>
+  <meta name="description" content="AMB в Иркутске — студия танцев по шаффлу. Пробное занятие бесплатно. Помяловского 1, цокольный этаж. Запись по телефону +7 (999) 686-19-11.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AMB — студия шаффла | Иркутск">
+  <meta property="og:description" content="Научись шаффлу с нуля в дружеской атмосфере. Первое пробное занятие бесплатно.">
+  <meta property="og:locale" content="ru_RU">
+  <!-- PLACEHOLDER Unsplash: заменить на фото студии AMB. Источник: unsplash.com — проверить права -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&w=1200&q=80">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2311141A'/%3E%3Cpath d='M14 40c8-16 16-24 36-28-12 10-16 20-17 30-8-5-13-5-19-2z' fill='%2339F2C1'/%3E%3Ccircle cx='46' cy='18' r='3.5' fill='%23F4F6F8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #11141a;
+      --ink-2: #1c222c;
+      --mint: #39f2c1;
+      --mint-deep: #1db892;
+      --paper: #f3f5f7;
+      --fog: #e7ebf0;
+      --muted: #5f6b78;
+      --line: rgba(17, 20, 26, 0.12);
+      --white: #ffffff;
+      --shadow: 0 22px 50px rgba(17, 20, 26, 0.14);
+      --radius: 22px;
+      --container: 1140px;
+      --header-h: 72px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Outfit", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 480px at 0% -8%, rgba(57, 242, 193, 0.18), transparent 55%),
+        radial-gradient(700px 420px at 100% 0%, rgba(17, 20, 26, 0.08), transparent 50%),
+        linear-gradient(180deg, var(--paper) 0%, #fff 42%, var(--fog) 100%);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    :focus-visible {
+      outline: 3px solid rgba(57, 242, 193, 0.7);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(100% - 1.5rem, var(--container));
+      margin-inline: auto;
+    }
+
+    .demo-banner {
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      background: var(--ink);
+      color: #c9d0d8;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.55rem 1rem;
+    }
+
+    .demo-banner span { color: var(--mint); }
+
+    .site-header {
+      position: sticky;
+      top: 34px;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(243, 245, 247, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 800;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--ink);
+      color: var(--mint);
+      display: grid;
+      place-items: center;
+      font-family: "Syne", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: -0.04em;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .logo-text strong {
+      font-family: "Syne", sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-text small {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: none;
+      align-items: center;
+      gap: 1.2rem;
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .nav a { transition: color 0.2s var(--ease); }
+    .nav a:hover,
+    .nav a:focus-visible { color: var(--mint-deep); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-toggle svg { width: 22px; height: 22px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 48px;
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      text-align: center;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--mint);
+      color: var(--ink);
+      box-shadow: 0 12px 28px rgba(29, 184, 146, 0.28);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .btn-secondary:hover { border-color: var(--ink); }
+
+    .btn-dark {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--mint);
+      color: var(--mint);
+    }
+
+    .btn-sm {
+      min-height: 42px;
+      padding: 0.55rem 1rem;
+      font-size: 0.92rem;
+    }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: rgba(243, 245, 247, 0.98);
+      padding: 0.7rem 0 1rem;
+    }
+
+    .mobile-nav.is-open { display: block; }
+    .mobile-nav nav { display: grid; gap: 0.25rem; }
+
+    .mobile-nav a {
+      padding: 0.85rem 0.35rem;
+      font-weight: 700;
+      border-radius: 10px;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:focus-visible {
+      background: rgba(57, 242, 193, 0.22);
+    }
+
+    .hero {
+      padding: 1.5rem 0 3.2rem;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.6rem;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(17, 20, 26, 0.06);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint-deep);
+      display: inline-block;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font-family: "Syne", sans-serif;
+      font-size: clamp(2.3rem, 8vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      max-width: 11ch;
+    }
+
+    .hero-lead {
+      margin: 0 0 1.35rem;
+      max-width: 38ch;
+      color: var(--ink-2);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 0.85rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--line);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .stars { color: #d4a017; letter-spacing: 0.04em; }
+
+    .hero-visual {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 320px;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 38%, rgba(17, 20, 26, 0.62) 100%);
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 2;
+      max-width: min(92%, 300px);
+      padding: 0.95rem 1rem;
+      border-radius: 18px;
+      background: rgba(17, 20, 26, 0.9);
+      color: #fff;
+      border: 1px solid rgba(57, 242, 193, 0.4);
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-family: "Syne", sans-serif;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-badge p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .section { padding: 3.3rem 0; }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 1.7rem;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mint-deep);
+    }
+
+    .section-head h2,
+    .cta-card h2,
+    .faq-head h2 {
+      margin: 0 0 0.65rem;
+      font-family: "Syne", sans-serif;
+      font-size: clamp(1.85rem, 4.6vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p,
+    .faq-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .directions-grid,
+    .chooser-grid,
+    .reviews-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .direction-card,
+    .chooser-item,
+    .info-card,
+    .teacher-card,
+    .review-card,
+    .faq-item {
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .direction-card {
+      padding: 1.35rem 1.25rem;
+      box-shadow: 0 10px 28px rgba(17, 20, 26, 0.04);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .direction-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .direction-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: var(--mint);
+    }
+
+    .direction-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .direction-card p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      padding: 0.32rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(57, 242, 193, 0.18);
+      color: var(--ink);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .chooser {
+      padding: 1.4rem;
+      border-radius: 28px;
+      background: var(--ink);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .chooser .section-kicker { color: var(--mint); }
+    .chooser .section-head p { color: rgba(255, 255, 255, 0.68); }
+    .chooser h2 { color: #fff; }
+
+    .chooser-item {
+      padding: 1.05rem 1rem;
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .chooser-item h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.02rem;
+    }
+
+    .chooser-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.92rem;
+    }
+
+    .teacher-card { padding: 1.35rem; }
+
+    .teacher-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.2rem;
+    }
+
+    .teacher-card .role {
+      margin: 0 0 0.7rem;
+      color: var(--mint-deep);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .teacher-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .split-panel {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .info-card { padding: 1.35rem; }
+
+    .info-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.12rem;
+    }
+
+    .info-card p,
+    .info-card li { color: var(--muted); }
+
+    .info-card ul {
+      margin: 0 0 1rem;
+      padding-left: 1.1rem;
+    }
+
+    .info-card li + li { margin-top: 0.4rem; }
+
+    .note {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(57, 242, 193, 0.14);
+      border: 1px solid rgba(29, 184, 146, 0.28);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+
+    .note svg {
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      color: var(--mint-deep);
+    }
+
+    .location-card {
+      padding: 1.5rem;
+      border-radius: 28px;
+      background:
+        radial-gradient(500px 240px at 100% 0%, rgba(57, 242, 193, 0.2), transparent 60%),
+        var(--ink);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .location-card h3 {
+      margin: 0 0 0.5rem;
+      font-family: "Syne", sans-serif;
+      font-size: 1.5rem;
+    }
+
+    .location-card p {
+      margin: 0 0 1rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .location-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .location-meta span {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 150px;
+      background: var(--fog);
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      object-fit: cover;
+      transition: transform 0.45s var(--ease);
+    }
+
+    .gallery-grid figure:hover img { transform: scale(1.05); }
+
+    .gallery-grid figcaption {
+      position: absolute;
+      left: 0.7rem;
+      bottom: 0.7rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(17, 20, 26, 0.7);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .gallery-grid figure:first-child {
+      grid-column: 1 / -1;
+      min-height: 220px;
+    }
+
+    .gallery-grid figure:first-child img { min-height: 220px; }
+
+    .review-card { padding: 1.3rem; }
+
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .review-top strong { display: block; }
+    .review-top span {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .review-card blockquote {
+      margin: 0;
+      color: var(--ink-2);
+      font-size: 0.96rem;
+    }
+
+    .reviews-source {
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .faq-list { display: grid; gap: 0.65rem; }
+    .faq-item { overflow: hidden; }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.05rem 1.15rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(57, 242, 193, 0.2);
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after { content: "–"; }
+
+    .faq-item p {
+      margin: 0;
+      padding: 0 1.15rem 1.15rem;
+      color: var(--muted);
+    }
+
+    .cta-band { padding: 0 0 3.3rem; }
+
+    .cta-card {
+      display: grid;
+      gap: 1.4rem;
+      padding: 1.5rem;
+      border-radius: 30px;
+      background:
+        radial-gradient(520px 260px at 0% 0%, rgba(57, 242, 193, 0.2), transparent 55%),
+        linear-gradient(150deg, #12151c, #1f2733);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card p {
+      margin: 0 0 1.1rem;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 44ch;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .contact-links a,
+    .contact-links span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .contact-links a:hover { color: var(--mint); }
+
+    .form-card {
+      padding: 1.2rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .form-card h3 {
+      margin: 0 0 0.35rem;
+      font-family: "Syne", sans-serif;
+      font-size: 1.3rem;
+    }
+
+    .form-card > p {
+      margin: 0 0 1rem;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.9rem;
+    }
+
+    .form-grid { display: grid; gap: 0.7rem; }
+
+    .field label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      padding: 0.85rem 0.95rem;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(255, 255, 255, 0.4); }
+    .field select option { color: var(--ink); }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: rgba(57, 242, 193, 0.7);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .field textarea { min-height: 96px; resize: vertical; }
+
+    .form-hint {
+      margin: 0.7rem 0 0;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 0.8rem;
+      padding: 0.85rem 0.95rem;
+      border-radius: 12px;
+      background: rgba(57, 242, 193, 0.12);
+      border: 1px solid rgba(57, 242, 193, 0.3);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .form-status.is-visible { display: block; }
+    .form-status.is-error {
+      background: rgba(255, 120, 120, 0.12);
+      border-color: rgba(255, 160, 160, 0.4);
+    }
+
+    .site-footer {
+      padding: 2.3rem 0 2.7rem;
+      border-top: 1px solid var(--line);
+      background: rgba(243, 245, 247, 0.75);
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-family: "Syne", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-brand p,
+    .footer-col p,
+    .footer-col a {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .footer-col a:hover { color: var(--ink); }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (min-width: 720px) {
+      .container { width: min(100% - 2.5rem, var(--container)); }
+      .menu-toggle { display: none; }
+      .nav { display: flex; }
+      .hero { padding: 2.2rem 0 4rem; }
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      .hero-visual,
+      .hero-visual img { min-height: 480px; }
+      .directions-grid,
+      .chooser-grid,
+      .reviews-grid,
+      .split-panel {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        grid-template-rows: 220px 220px;
+      }
+      .gallery-grid figure,
+      .gallery-grid figure img,
+      .gallery-grid figure:first-child,
+      .gallery-grid figure:first-child img {
+        min-height: 100%;
+        height: 100%;
+      }
+      .gallery-grid figure:first-child {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+      }
+      .cta-card {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        align-items: start;
+      }
+      .footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .chooser-grid { grid-template-columns: repeat(4, 1fr); }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .header-cta-desktop { display: inline-flex; }
+    }
+
+    @media (max-width: 979px) {
+      .header-cta-desktop { display: none; }
+    }
+
+    @media (max-width: 359px) {
+      .hero h1 { font-size: 2rem; }
+      .btn { width: 100%; }
+      .hero-actions .btn { flex: 1 1 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner" role="note">
+    <span>Демонстрационная концепция.</span> Не является официальным сайтом школы.
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="AMB — на главную">
+        <span class="logo-mark" aria-hidden="true">AMB</span>
+        <span class="logo-text">
+          <strong>AMB</strong>
+          <small>Шаффл · Иркутск</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#directions">Направление</a>
+        <a href="#choose">Как начать</a>
+        <a href="#teacher">Тренер</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm header-cta-desktop" href="#signup">Записаться</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <div class="container">
+        <nav aria-label="Мобильная навигация">
+          <a href="#directions">Направление</a>
+          <a href="#choose">Как начать</a>
+          <a href="#teacher">Тренер</a>
+          <a href="#location">Адрес</a>
+          <a href="#schedule">Расписание</a>
+          <a href="#prices">Цены</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">FAQ</a>
+          <a href="#signup">Запись</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><i aria-hidden="true"></i> Студия танцев по шаффлу</div>
+          <h1>AMB — шаффл в Иркутске с нуля</h1>
+          <p class="hero-lead">
+            Учись быстрому и чёткому footwork в дружеской атмосфере.
+            Первое пробное занятие — бесплатно.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#signup">Записаться на пробное</a>
+            <a class="btn btn-secondary" href="#directions">О направлении</a>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-chip">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span>Оценки в 2ГИС</span>
+            </div>
+            <div class="meta-chip">Пробное <strong>бесплатно</strong></div>
+            <div class="meta-chip">С нуля</div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <!-- PLACEHOLDER Unsplash: заменить на фото занятий AMB. Источник: unsplash.com — проверить права -->
+          <img
+            src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&w=1400&q=80"
+            alt="Танцор в движении на уличной тренировке"
+            width="1400"
+            height="900"
+            fetchpriority="high"
+          >
+          <div class="hero-badge">
+            <strong>Помяловского, 1</strong>
+            <p>Офис 006 · цокольный этаж · пн–пт и вс 18:00–21:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="directions">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Направление</span>
+          <h2>Чему обучают в AMB</h2>
+          <p>По карточке в 2ГИС студия специализируется на шаффле — современном уличном стиле с акцентом на работу ног и ритм.</p>
+        </div>
+
+        <div class="directions-grid">
+          <article class="direction-card reveal">
+            <h3>Shuffle / Шаффл</h3>
+            <p>
+              Основное направление студии. Работа над шагами, скоростью, синхронностью и чувством ритма.
+              В отзывах ученики отмечают, что можно начать с нуля и уже чувствовать прогресс.
+            </p>
+            <div class="tags">
+              <span class="tag">с нуля</span>
+              <span class="tag">уличный стиль</span>
+              <span class="tag">1-е занятие бесплатно</span>
+            </div>
+          </article>
+
+          <article class="direction-card reveal">
+            <h3>Групповые тренировки</h3>
+            <p>
+              Занятия проходят в вечернее время: понедельник–пятница и воскресенье с 18:00 до 21:00.
+              Точный слот группы уточняйте при записи.
+            </p>
+            <div class="tags">
+              <span class="tag">вечерние группы</span>
+              <span class="tag">пн–пт, вс</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="choose" style="padding-top: 0;">
+      <div class="container">
+        <div class="chooser reveal">
+          <div class="section-head">
+            <span class="section-kicker">Старт</span>
+            <h2>Как начать заниматься</h2>
+            <p>Коротко — чтобы сразу понять, подходит ли формат.</p>
+          </div>
+          <div class="chooser-grid">
+            <article class="chooser-item">
+              <h3>По уровню</h3>
+              <p>Можно прийти без опыта. В отзывах пишут, что движения объясняют доступно даже для новичков.</p>
+            </article>
+            <article class="chooser-item">
+              <h3>По цели</h3>
+              <p>Освоить шаффл, прокачать ритм и footwork, заниматься в позитивной группе по вечерам.</p>
+            </article>
+            <article class="chooser-item">
+              <h3>По времени</h3>
+              <p>Студия принимает в будни и воскресенье с 18:00 до 21:00. Суббота в открытом графике не указана.</p>
+            </article>
+            <article class="chooser-item">
+              <h3>По локации</h3>
+              <p>Один адрес: Помяловского 1, офис 006, цокольный этаж. Удобно зайти и сразу начать.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teacher">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Тренер</span>
+          <h2>Кто ведёт занятия</h2>
+          <p>Информация из отзывов учеников на 2ГИС.</p>
+        </div>
+        <article class="teacher-card reveal" style="max-width:720px;">
+          <h3>Маргарита Юрьевна</h3>
+          <p class="role">Тренер по шаффлу</p>
+          <p>
+            В отзывах отмечают чёткие и терпеливые объяснения, внимание к каждому ученику и дружескую атмосферу на тренировках.
+            Ученики пишут, что с нуля получается быстро влиться и получать удовольствие от процесса.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="location" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Адрес</span>
+          <h2>Где находится студия</h2>
+          <p>Иркутск · цокольный этаж · офис 006.</p>
+        </div>
+        <div class="location-card reveal">
+          <h3>ул. Помяловского, 1</h3>
+          <p>Офис 006 · цокольный этаж</p>
+          <div class="location-meta">
+            <span>пн–пт, вс · 18:00–21:00</span>
+            <span>шаффл</span>
+            <span>пробное бесплатно</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+            <a class="btn btn-primary btn-sm" href="https://2gis.ru/irkutsk/firm/70000001106087184" target="_blank" rel="noopener noreferrer">Открыть в 2ГИС</a>
+            <a class="btn btn-ghost btn-sm" href="tel:+79996861911">Позвонить</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="container split-panel">
+        <div class="info-card reveal">
+          <span class="section-kicker">Расписание</span>
+          <h3>Что удалось подтвердить</h3>
+          <ul>
+            <li>Время работы студии: пн–пт и вс, 18:00–21:00.</li>
+            <li>Подробная сетка групп по дням в открытом доступе не опубликована.</li>
+            <li>Запись — по телефону.</li>
+          </ul>
+          <div class="note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 8v5M12 16.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Уточните актуальное расписание у администратора — время группы может отличаться внутри окна 18:00–21:00.</span>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <h3>Запросить расписание</h3>
+          <p>Позвоните или оставьте заявку — подскажут ближайшее занятие и уровень группы.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.65rem; margin-top:1rem;">
+            <a class="btn btn-dark" href="tel:+79996861911">+7 (999) 686-19-11</a>
+            <a class="btn btn-secondary" href="tel:+79581113894">+7 (958) 111-38-94</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prices" style="padding-top: 0;">
+      <div class="container split-panel">
+        <div class="info-card reveal">
+          <span class="section-kicker">Стоимость</span>
+          <h3>Пробное — бесплатно</h3>
+          <p>
+            В карточке студии на 2ГИС указано: «Первое пробное занятие бесплатно!».
+            Стоимость абонементов и разовых занятий после пробного в открытых источниках не найдена.
+          </p>
+        </div>
+        <div class="info-card reveal">
+          <h3>Узнать стоимость дальше</h3>
+          <p>Спросите при записи — расскажут про формат оплаты и регулярные занятия. В справочниках указаны наличные и перевод на карту.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.65rem; margin-top:1rem;">
+            <a class="btn btn-dark" href="tel:+79996861911">Позвонить</a>
+            <a class="btn btn-secondary" href="#signup">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Атмосфера</span>
+          <h2>Движение, ритм, энергия</h2>
+          <p>Настроение тренировок — скорость ног, музыка и драйв шаффла.</p>
+        </div>
+        <div class="gallery-grid">
+          <!-- PLACEHOLDER Unsplash: заменить на фото студии AMB. Источник: unsplash.com — проверить права -->
+          <figure class="reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?auto=format&fit=crop&w=1200&q=80" alt="Танцевальная тренировка в зале" width="1200" height="900">
+            <figcaption>Тренировки</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Работа над техникой движения" width="900" height="700">
+            <figcaption>Техника</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?auto=format&fit=crop&w=900&q=80" alt="Энергичное групповое занятие" width="900" height="700">
+            <figcaption>Группа</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=900&q=80" alt="Динамика танцевального движения" width="900" height="700">
+            <figcaption>Ритм</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&w=900&q=80" alt="Светлый танцевальный зал" width="900" height="700">
+            <figcaption>Зал</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Отзывы</span>
+          <h2>Что пишут ученики</h2>
+          <p>Тексты из отзывов на 2ГИС — без изменения смысла.</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <div class="review-top">
+              <div>
+                <strong>Отзыв на 2ГИС</strong>
+                <span>Тренер Маргарита</span>
+              </div>
+              <span class="stars" aria-label="Положительная оценка">★★★★★</span>
+            </div>
+            <blockquote>
+              «Студия огонь, каждая тренировка прекрасна) Хочу отдельно поблагодарить нашего тренера Маргариту, объясняет все быстро и понятно. Благодаря ней на тренировках всегда дружеская и позитивная атмосфера. Если хотите научится танцевать, вам сюда.»
+            </blockquote>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-top">
+              <div>
+                <strong>Отзыв на 2ГИС</strong>
+                <span>С нуля</span>
+              </div>
+              <span class="stars" aria-label="Положительная оценка">★★★★★</span>
+            </div>
+            <blockquote>
+              «Потрясающая студия и педагог! В первую очередь, благодаря нашему тренеру — Маргарите Юрьевне. Занимаюсь с нуля, а прогресс уже огромный. Маргарита Юрьевна умеет доступно объяснять, внимательна к каждому и создаёт очень позитивную атмосферу. После её занятий выходишь с новыми навыками и отличным настроением. Однозначно рекомендую студию и этого замечательного тренера всем, кто хочет танцевать с удовольствием!»
+            </blockquote>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-top">
+              <div>
+                <strong>Отзыв на 2ГИС</strong>
+                <span>Атмосфера</span>
+              </div>
+              <span class="stars" aria-label="Положительная оценка">★★★★★</span>
+            </div>
+            <blockquote>
+              «Хочу оставить отзыв о тренере Маргарите. Она великолепный специалист, умеющий доступно объяснять движения и создающий дружелюбную атмосферу на занятиях. Маргарита вдохновляет и поддерживает каждого ученика, помогая быстро прогрессировать. Рекомендую её всем, кто хочет научиться танцевать и получить удовольствие от процесса!»
+            </blockquote>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-top">
+              <div>
+                <strong>Отзыв на 2ГИС</strong>
+                <span>Наставник</span>
+              </div>
+              <span class="stars" aria-label="Положительная оценка">★★★★★</span>
+            </div>
+            <blockquote>
+              «Хочу выразить огромную благодарность нашему тренеру, Маргарите Юрьевне. Маргарита не только блестящий профессионал, который умеет объяснить даже самые сложные движения просто и доступно, но и очень чуткий, внимательный наставник. Она создаёт в группе потрясающую атмосферу. Искренне рекомендую.»
+            </blockquote>
+          </article>
+        </div>
+        <p class="reviews-source reveal">
+          Источник:
+          <a href="https://2gis.ru/irkutsk/firm/70000001106087184" target="_blank" rel="noopener noreferrer">карточка AMB в 2ГИС</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="padding-top: 0;">
+      <div class="container">
+        <div class="faq-head section-head reveal">
+          <span class="section-kicker">FAQ</span>
+          <h2>Вопросы перед записью</h2>
+          <p>Ответы только на основе найденных данных. Остальное — по телефону.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>Есть ли пробное занятие?</summary>
+            <p>Да. В карточке студии указано: первое пробное занятие бесплатно.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Можно ли прийти без подготовки?</summary>
+            <p>Да. В отзывах ученики пишут, что приходят с нуля, а тренер объясняет движения понятно и терпеливо.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Чему обучают?</summary>
+            <p>Студия позиционирует себя как студия танцев по шаффлу — уличный стиль с акцентом на работу ног и ритм.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Когда можно заниматься?</summary>
+            <p>По открытому графику: понедельник–пятница и воскресенье с 18:00 до 21:00. Точное время группы уточняйте при записи.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Как записаться?</summary>
+            <p>По телефону +7 (999) 686-19-11 или +7 (958) 111-38-94. Публичных ссылок на Telegram/VK в открытых источниках не найдено.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Что надеть?</summary>
+            <p>Точный дресс-код в открытых источниках не указан. Обычно для шаффла удобны спортивная одежда и кроссовки — уточните при записи.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="signup">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div>
+            <span class="section-kicker" style="color:var(--mint);">Запись</span>
+            <h2>Запишитесь на бесплатное пробное</h2>
+            <p>
+              Позвоните или оставьте данные в форме. Это демонстрационная страница:
+              серверной отправки нет — после проверки полей покажем готовый текст заявки и предложим позвонить.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="tel:+79996861911">+7 (999) 686-19-11</a>
+              <a class="btn btn-ghost" href="tel:+79581113894">+7 (958) 111-38-94</a>
+            </div>
+            <div class="contact-links">
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.4 7-12a7 7 0 10-14 0c0 6.6 7 12 7 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+                Помяловского 1 · офис 006 · цокольный этаж
+              </span>
+              <span>пн–пт, вс · 18:00–21:00</span>
+            </div>
+          </div>
+
+          <form class="form-card" id="lead-form" novalidate>
+            <h3>Форма записи</h3>
+            <p>Публичного Telegram студии не найдено. Форма соберёт текст заявки — отправьте его сами по телефону или в мессенджере.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required>
+              </div>
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+              </div>
+              <div class="field">
+                <label for="level">Уровень</label>
+                <select id="level" name="level" required>
+                  <option value="">Выберите вариант</option>
+                  <option>С нуля</option>
+                  <option>Уже пробовал(а) шаффл</option>
+                  <option>Продолжающий</option>
+                  <option>Пока не знаю</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Комментарий</label>
+                <textarea id="message" name="message" placeholder="Удобный день, вопросы"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Собрать заявку</button>
+            </div>
+            <p class="form-hint">Демонстрационная форма: заявка на сервер не отправляется.</p>
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>AMB</strong>
+          <p>Студия танцев по шаффлу в Иркутске. Пробное занятие бесплатно.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Контакты</h3>
+          <a href="tel:+79996861911">+7 (999) 686-19-11</a>
+          <a href="tel:+79581113894">+7 (958) 111-38-94</a>
+          <p>пн–пт, вс · 18:00–21:00</p>
+        </div>
+        <div class="footer-col">
+          <h3>Адрес</h3>
+          <p>Иркутск, ул. Помяловского, 1</p>
+          <p>Офис 006 · цокольный этаж</p>
+        </div>
+      </div>
+      <p class="footer-note">
+        Демонстрационная концепция лендинга. Не является официальным сайтом студии AMB.
+        Контакты и факты собраны из открытых источников (2ГИС, Zoon) и требуют проверки перед публикацией.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuToggle = document.querySelector(".menu-toggle");
+      var mobileNav = document.getElementById("mobile-nav");
+      var form = document.getElementById("lead-form");
+      var statusBox = document.getElementById("form-status");
+
+      function setMenu(open) {
+        if (!menuToggle || !mobileNav) return;
+        menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        menuToggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+        mobileNav.classList.toggle("is-open", open);
+        if (open) mobileNav.removeAttribute("hidden");
+        else mobileNav.setAttribute("hidden", "");
+      }
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", function () {
+          setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+        });
+        mobileNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () { setMenu(false); });
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") setMenu(false);
+        });
+      }
+
+      var revealItems = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.14, rootMargin: "0px 0px -40px 0px" });
+        revealItems.forEach(function (item) { observer.observe(item); });
+      } else {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+      }
+
+      function showStatus(message, isError) {
+        if (!statusBox) return;
+        statusBox.textContent = message;
+        statusBox.classList.add("is-visible");
+        statusBox.classList.toggle("is-error", !!isError);
+      }
+
+      if (form) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          var name = form.name.value.trim();
+          var phone = form.phone.value.trim();
+          var level = form.level.value.trim();
+          var message = form.message.value.trim();
+
+          if (!name || !phone || !level) {
+            showStatus("Заполните имя, телефон и уровень.", true);
+            return;
+          }
+
+          var phoneDigits = phone.replace(/\D/g, "");
+          if (phoneDigits.length < 10) {
+            showStatus("Проверьте телефон: нужно минимум 10 цифр.", true);
+            form.phone.focus();
+            return;
+          }
+
+          var text =
+            "Заявка в AMB (шаффл, Иркутск)" +
+            "\nИмя: " + name +
+            "\nТелефон: " + phone +
+            "\nУровень: " + level +
+            (message ? "\nКомментарий: " + message : "") +
+            "\n\nХочу записаться на бесплатное пробное занятие.";
+
+          showStatus(
+            "Это демонстрационная форма: заявка на сервер не отправлена. Готовый текст:\n\n" +
+            text +
+            "\n\nПозвоните в студию и продиктуйте данные, либо отправьте текст сами в мессенджер по номеру студии.",
+            false
+          );
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).catch(function () {});
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
